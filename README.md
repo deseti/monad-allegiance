@@ -197,7 +197,7 @@ monad-allegiance/
 ### Frontend (Vercel)
 1. Connect your GitHub repository to Vercel
 2. Set environment variables in Vercel dashboard:
-   - `VITE_API_BASE_URL=https://monad-backend.ddns.net`
+   - `VITE_API_BASE_URL=
 3. Deploy automatically on push to main branch
 
 ### Backend (AWS EC2)
@@ -218,7 +218,7 @@ pm2 save
 
 **Frontend (.env)**:
 ```env
-VITE_API_BASE_URL=https://monad-backend.ddns.net
+VITE_API_BASE_URL=
 ```
 
 **Backend (.env)**:
