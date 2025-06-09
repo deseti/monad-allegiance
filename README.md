@@ -7,7 +7,6 @@ A comprehensive real-time dashboard for monitoring Monad blockchain activity, fe
 ## 🌐 Live Demo
 
 - **Frontend**: [https://monad-allegiance.vercel.app/](https://monad-allegiance.vercel.app/)
-- **Backend API**: [https://monad-backend.ddns.net](https://monad-backend.ddns.net)
 
 ## 🌟 Features
 
