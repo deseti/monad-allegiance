@@ -1,0 +1,191 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Modal Content */
+.modal-content {
+  background: linear-gradient(to bottom right, #1a1a1a, #2d2d2d);
+  border-radius: 1rem;
+  width: 95%;
+  max-width: 500px;
+  max-height: 90vh;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Modal Header */
+.modal-content h2 {
+  color: #e9d5ff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.5rem 1.5rem 1rem;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.2s;
+  z-index: 1;
+}
+
+.close-button:hover {
+  color: #e9d5ff;
+}
+
+/* Activity List */
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Activity Item */
+.activity-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s;
+}
+
+.activity-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Token Info */
+.token-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.token-logo {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.token-info span {
+  color: #e9d5ff;
+  font-weight: 500;
+}
+
+/* Token Count */
+.token-count {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Scrollbar Styling */
+.activity-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.activity-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.activity-list::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 3px;
+}
+
+.activity-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 100%;
+    max-height: 85vh;
+    border-radius: 0.75rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.25rem;
+    padding: 1.25rem 1.25rem 0.75rem;
+  }
+
+  .activity-item {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .token-logo {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .token-info span {
+    font-size: 0.875rem;
+  }
+
+  .token-count {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+/* Animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+/* Dark Mode Optimizations */
+@media (prefers-color-scheme: dark) {
+  .modal-content {
+    background: linear-gradient(to bottom right, #111827, #1f2937);
+  }
+
+  .token-count {
+    background-color: rgba(139, 92, 246, 0.15);
+  }
+} 

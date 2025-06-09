@@ -1,0 +1,250 @@
+/* Leaderboard Container */
+.leaderboard-container {
+  background: linear-gradient(to bottom right, #1a1a1a, #2d2d2d);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leaderboard-container h2 {
+  color: #e9d5ff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Leaderboard List */
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Leaderboard Item */
+.leaderboard-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+  animation: slideUp 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.leaderboard-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Rank Styling */
+.rank {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #9ca3af;
+  min-width: 2rem;
+  text-align: center;
+}
+
+/* Player Info */
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.leaderboard-item:hover .logo {
+  transform: scale(1.05);
+}
+
+.name {
+  color: #e9d5ff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Score */
+.score {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #a78bfa;
+  background: rgba(139, 92, 246, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  min-width: 3rem;
+  text-align: center;
+}
+
+/* Top 3 Ranks */
+.rank-1 {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  animation-delay: 0.1s;
+}
+
+.rank-1 .rank {
+  color: #ffd700;
+  position: relative;
+}
+
+.rank-1 .rank::before {
+  content: '👑';
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+}
+
+.rank-1 .logo {
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.rank-1 .score {
+  background: rgba(255, 215, 0, 0.15);
+  color: #ffd700;
+}
+
+.rank-2 {
+  background: linear-gradient(135deg, rgba(192, 192, 192, 0.1), rgba(192, 192, 192, 0.05));
+  border: 1px solid rgba(192, 192, 192, 0.2);
+  animation-delay: 0.2s;
+}
+
+.rank-2 .rank {
+  color: #c0c0c0;
+}
+
+.rank-2 .logo {
+  border-color: rgba(192, 192, 192, 0.5);
+}
+
+.rank-2 .score {
+  background: rgba(192, 192, 192, 0.15);
+  color: #c0c0c0;
+}
+
+.rank-3 {
+  background: linear-gradient(135deg, rgba(205, 127, 50, 0.1), rgba(205, 127, 50, 0.05));
+  border: 1px solid rgba(205, 127, 50, 0.2);
+  animation-delay: 0.3s;
+}
+
+.rank-3 .rank {
+  color: #cd7f32;
+}
+
+.rank-3 .logo {
+  border-color: rgba(205, 127, 50, 0.5);
+}
+
+.rank-3 .score {
+  background: rgba(205, 127, 50, 0.15);
+  color: #cd7f32;
+}
+
+/* Current User Highlight */
+.current-user {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  position: relative;
+}
+
+.current-user::before {
+  content: 'You';
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+  background: #8b5cf6;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+/* Zebra Striping for ranks 4+ */
+.leaderboard-item:not(.rank-1):not(.rank-2):not(.rank-3):nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .leaderboard-container {
+    padding: 1rem;
+  }
+
+  .leaderboard-container h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .leaderboard-item {
+    padding: 0.5rem 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .name {
+    font-size: 0.875rem;
+  }
+
+  .score {
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .rank {
+    font-size: 1rem;
+  }
+}
+
+/* Dark Mode Optimizations */
+@media (prefers-color-scheme: dark) {
+  .leaderboard-container {
+    background: linear-gradient(to bottom right, #111827, #1f2937);
+  }
+
+  .leaderboard-item {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .leaderboard-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+} 
