@@ -154,7 +154,7 @@ npm run dev
 
 7. **Access the application**:
 - Frontend: [http://localhost:5173](http://localhost:5173)
-- Backend API: [http://localhost:3001](http://localhost:3000)
+- Backend API: [http://localhost:3000](http://localhost:3000)
 
 ## 📦 Project Structure
 
