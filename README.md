@@ -30,11 +30,6 @@ A comprehensive real-time dashboard for monitoring Monad blockchain activity, fe
 - **Real-time Pledge Tracking**: Live updates of community allegiances
 - **Visual Feedback System**: Interactive animations and state management
 
-### Leaderboard & Competition
-- **Global User Rankings**: Track top contributors and active participants
-- **House Competition Metrics**: Compare performance across different houses
-- **Achievement System**: Reward system for active community members
-
 ## 🏗️ Architecture
 
 ### Frontend (React/TypeScript)
